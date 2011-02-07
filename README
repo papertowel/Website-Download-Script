@@ -1,19 +1,33 @@
 Using the script:
 -This script is designed to be run on a Linux machine, it uses the wget command along with other Linux specific syntax.
 
--Start by changing directories to the location you want to store your website copy. Then create a folder for your website to be downloaded into. Once that folder is made change directories into it and copy your WebsiteMirror.sh script into it. Once the script is copied into that directory, just change directories to it and start the script. Keep in mind that in its present for that this script has to be modified to fit your needs before running it (see comments inside the .sh file to adjust it for your needs.). Once the script is set up it can be run over and over to capture the changes in a website. 
+-Syntax for this command is as follows ./WebsiteMirror.sh LOCALMIRROR REMOTESERVER SPEED USERNAME PASSWORD SAVE
+
+Accepted commands: 
 	
-1.	Chris@Ubuntu-Server:~$ cd /home/Chris/
+1.	./WebsiteMirror.sh LOCALMIRROR REMOTESERVER
 
-2.	Chris@Ubuntu-Server:~$ mkdir FolderForWebsite
+2.	./WebsiteMirror.sh LOCALMIRROR REMOTESERVER save
 
-3.	Chris@Ubuntu-Server:~$ cd FolderForWebsite
+3.	./WebsiteMirror.sh LOCALMIRROR REMOTESERVER SPEED *Note due to an error in the script this is not accepted yet
 
-4.	Chris@Ubuntu-Server:~$ cp /home/Chris/Downloads/WebsiteMirror.sh /home/Chris/FolderForWebsite
+4.	./WebsiteMirror.sh LOCALMIRROR REMOTESERVER SPEED SAVE
 
-5.	Chris@Ubuntu-Server:~$ cd /home/Chris/FolderForWebsite
+5.	./WebsiteMirror.sh LOCALMIRROR REMOTESERVER USERNAME PASSWORD
 
-6.	Chris@Ubuntu-Server:~$ ./WebsiteMirror.sh
+6.	./WebsiteMirror.sh LOCALMIRROR REMOTESERVER SPEED USERNAME PASSWORD
 
-7.	Profit!
+7.	./WebsiteMirror.sh LOCALMIRROR REMOTESERVER USERNAME PASSWORD SAVE *Note due to an error in the script this is not accepted yet
+
+8.	./WebsiteMirror.sh LOCALMIRROR REMOTESERVER SPEED USERNAME PASSWORD SAVE 
+
+Example syntax
+./WebsiteMirror.sh ~/mirror https://website.com
+./WebsiteMirror.sh ~/mirror http://website.com
+./WebsiteMirror.sh ~/mirror https://website.com save
+./WebsiteMirror.sh ~/mirror http://website.com save
+./WebsiteMirror.sh ~/mirror https://website.com myuser mypassword
+./WebsiteMirror.sh ~/mirror https://website.com 1200 myuser mypassword
+./WebsiteMirror.sh ~/mirror https://website.com 1200 myuser mypassword save
+
 
