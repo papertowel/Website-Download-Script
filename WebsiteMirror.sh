@@ -205,15 +205,18 @@ echo " "
 echo "Do you want to delete any pre-existing mirror html and download files ( y / n ) ?"
 
 read a
-if [[ $a == "N" || $a == "n" ]]; then
-        echo "Skipping Clean Process..."
-else
+
+if [[ $a == "Y" || $a == "y" ]]; then
+
         echo "Cleaning files..."
 
 find $LOCALMIRROR -name '*html*' -print0 | xargs -0 rm -v
 find $LOCALMIRROR -name '*downloads.*' -print0 | xargs -0 rm -v
 
+else
+        echo "Skipping Clean Process..."
 fi
+
 echo " "
 echo " --- Part 2 ---"
 read -p "To continue this script and start mirror process press any key... to abort hold Control + C"
@@ -275,15 +278,18 @@ echo ""
 echo "Do you want to delete the extra html files ( y / n ) ?"
 
 read a
-if [[ $a == "N" || $a == "n" ]]; then
-        echo "Ending script..."
-else
+
+if [[ $a == "Y" || $a == "y" ]]; then
+
         echo "Cleaning files..."
 
 find $LOCALMIRROR -name '*html*' -print0 | xargs -0 rm -v
 find $LOCALMIRROR -name '*downloads.*' -print0 | xargs -0 rm -v
 
+else
+        echo "Skipping Clean Process..."
 fi
+
 
 echo "end of script"
 echo "#=\+/=#-#=\+/=#-#=\+/=#-#=\+/=#-#=\+/=#-#=\+/=#-#=\+/=#-#=\+/=#"
