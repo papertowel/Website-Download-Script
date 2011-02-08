@@ -223,7 +223,7 @@ read -p "To continue this script and start mirror process press any key... to ab
 cd $LOCALMIRROR
 if [[ $TYPE == "https" ]]; then
  #TYPE is https so we want no check certificate etc
-  if [[ -n $USERNAME && $USERNAME != "" ]]; then
+  if [[ -n $PASSWORD && $PASSWORD != "" ]]; then
    if [[ -n $SPEED  && $SPEED != "" && $SPEED != "0" ]]; then
      #TYPE IS HTTPS WE HAVE USERNAME PASS AND SPEED
      wget -c -e --limit-rate=$SPEED robots=off -x --user=$USERNAME --password=$PASSWORD -m --no-check-certificate $REMOTESERVER
@@ -242,7 +242,7 @@ if [[ $TYPE == "https" ]]; then
   fi
 else
  #TYPE is http or ftp
-  if [[ -n $USERNAME && $USERNAME != "" ]]; then
+  if [[ -n $PASSWORD && $PASSWORD != "" ]]; then
    if [[ -n $SPEED && $SPEED != "" && $SPEED != "0" ]]; then
      #TYPE IS HTTP WE HAVE USERNAME PASS AND SPEED
      wget -c -e --limit-rate=$SPEED robots=off -x --user=$USERNAME --password=$PASSWORD -m $REMOTESERVER
